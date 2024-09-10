@@ -1,5 +1,12 @@
 os: linux
-arch: ppc64le
 dist: bionic
-script:
-  - echo "test"
+jobs:
+  include:
+    - arch: ppc64le
+      group: dev
+      script:
+        - echo "test"
+    - arch: s390x
+      group: dev
+      script:
+        - echo "test"
